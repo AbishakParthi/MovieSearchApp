@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: linear-gradient(to right, gold, pink, blue);
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input{
+  background-color: aqua;
+  width: 370px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+.movies,
+.fav-container{
+  background-color: aqua;
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.txt{
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  outline: none;
+  margin-right: 5px;
+  padding: 5px;
+}
+.txt:focus{
+  border: 1px solid blue;
+}
+.btn{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-right: 5px;
+  padding: 2px 5px;
+  background-color: orange;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: rgb(238, 156, 3);
+}
+img{
+  border-radius: 10px;
+  height: 400px;
+  width: 300px;
+}
+.fav,
+.favRemove{
+  position: absolute;
+  top: 28.5%;
+  left: 56%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 2px;
+  background-color: rgb(252, 152, 169);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(254, 253, 253, 1);
+}
+.fav:hover{
+  background-color: rgb(231, 140, 155);
+}
+.plot{
+  width: 350px;
+  height: 86.4px;
+}
+.navbar{
+  background-color: black;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.navbar ul{
+  list-style: none;
+  display: inline-flex;
+  gap: 10px;
+}
+.navbar li a{
+  text-decoration: none;
+  color: #fff;
+}
+.favRemove{
+  background-color: orangered;
+  left: 43%;
+  top: 28.5%;
+}
+.favRemove:hover{
+  background-color: rgb(224, 61, 1);
+}
+.fav-heading{
+  background: linear-gradient(to left, skyblue, magenta, orangered);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.load{
+  background: linear-gradient(to right, yellow, green, green, green);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.load::after{
+  content: '';
+  animation: dots 1.5s steps(3, end) infinite;
+}
+@keyframes dots{
+  0% {content: '';}
+  33% {content: '.';}
+  66% {content: '..';}
+  100% {content: '...';}
+}
+.spiner-par{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background: rgba(11, 11, 11, 0.3);
+  z-index: 2;
+  gap: 10px;
+}
+.spiner{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid white;
+  border-top-color: green;
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin{
+  to{
+    transform: rotate(360deg);
+  }
+}
+.err{
+  color: red;
+}
+#drop{
+  border-radius: 10px;
+  border: 1px solid gold;
+  outline: none;
+  cursor: pointer;
+}
+.btn{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-right: 5px;
+  padding: 2px 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  background-color: black;
+  color: white;
+}
+.btn::before{
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 10px;
+  filter: blur(5px);
+  background: linear-gradient(270deg, red, violet, orange, magenta, gold, lime, cyan, blue);
+  background-size: 1400% 1400%;
+  opacity: 0.75;
+  z-index: -1;
+  animation: glow 5s linear infinite;
+}
+@keyframes glow{
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 150%; }
+  100% { background-position: 0% 50%; }
+}
